@@ -9,30 +9,36 @@ public class Board {
     public Board(Character[][] matrix) {
             this.matrix = matrix;
 
-
     }
-    public Boolean isInFavorOfX() {
-        for (int col = 0; col < matrix[0].length; col++) {
-            for (int row = 0; row < matrix.length; row++) {
-                if(matrix[col][row] == 'X') {
-                    return false;
-                }
-
+    public boolean checkHorizontal(Character player) {
+        for (int i = 0; i <= 2; i++) {
+            if(matrix[i][0] == player && matrix[i][1] == player && matrix [i][2] == player) {
+                return true;
             }
+
         }
-        return true;
+        return false;
+    }
+
+    public boolean checkVertical(Character player) {
+        for (int i = 0; i <= 2; i++) {
+            if(matrix[0][i] == player && matrix[1][i] == player && matrix [2][i] == player) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public Boolean isInFavorOfX() {
+
+
+        return null;
     }
 
     public Boolean isInFavorOfO() {
-        for (int col = 0; col < matrix[0].length; col++) {
-            for (int row = 0; row < matrix.length; row++) {
-                if (matrix[col][row] == 'O') {
-                    return true;
-                }
-            }
-        }
-        return false;
 
+    return null;
     }
     public Boolean isTie() {
         return null;
